@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sieve of Eratosthenes</title>
+</head>
+<body>
+    
+<h1>Sieve of Eratosthenes</h1>
+<form id="post">
+    <label for="maxNumber">Insert number:</label><br>
+    <input type="number" id="maxNumber" name="maxNumber"><br>
+    <input type="submit" value="Find prime numbers">
+</form>
+<p id="primeNumbers"></p>
+
+<script>
+    let form = document.querySelector('#post');
+    let data = new FormData(form);
+    let number = data.get('maxNumber');
+
+    document.getElementById(primeNumbers).innerHTML = "2";
+</script>
+</body>
+</html>

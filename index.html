@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algorithms</title>
+    <link rel="stylesheet" type="text/css" href="./style.css">
+</head>
+<body>
+    <main class="container">
+        <h1>ALGORITHMS</h1>
+
+        <section>
+            <div class="button" id="button-one" onclick="toggleInfoOne()">
+                <span>SIEVE OF ERATOSTHENES</span>
+            </div>
+            <div class="info" id="info-one">
+                <p>The Sieve of Eratosthenes is one of the oldest-known algorithms for <b>finding all prime numbers</b> up to any given limit! The algorithm is attributed to Eratosthenes, a Greek mathemetician born in the third century BCE.</p>
+                <div class="button">VIEW ALGORITHM</div>
+                <div class="button">VIEW CODE</div>
+            </div>
+        </section>
+
+        <section>
+            <div class="button" id="button-two" onclick="toggleInfoTwo()">
+                <span>CAPTURING RAINWATER</span>
+            </div>
+            <div class="info" id="info-two">
+                <p>The capturing rainwater problem asks you to calculate how much rainwater would be trapped in the empty spaces. The naive solution had a <b>quadratic runtime</b>, but it’s possible to solve this problem in O(n) time by using <b>two pointers</b>.</p>
+                <div class="button">VIEW ALGORITHM</div>
+                <div class="button">VIEW CODE</div>
+            </div>
+        </section>
+
+        <section>
+            <div class="button" id="button-three" onclick="toggleInfoThree()">
+                <span>SORTING ALGORITHMS</span>
+            </div>
+            <div class="info" id="info-three">
+                <p>There are many algorithms to sort arrays, including <b>bubble sort</b>, <b>merge sort</b>, and <b>quicksort</b>.</p>
+                <div class="button">VIEW ALGORITHM</div>
+                <div class="button">VIEW CODE</div>
+            </div>
+        </section>
+        
+        <!-- Fibonacci -->
+        <!-- https://www.codecademy.com/paths/front-end-engineer-career-path/tracks/fecp-22-interview-skills/modules/wdcp-22-javascript-algorithm-practice/articles/introduction-to-dynamic-programming-in-javascript -->
+
+        <section>
+            <div class="button" id="button-five" onclick="toggleInfoFive()">
+                <span>The Knapsack Problem</span>
+            </div>
+            <div class="info" id="info-five">
+                <p>Imagine that you’re a thief breaking into a house. There are so many valuables to steal - diamonds, gold, jewelry, and more! But remember, you’re just one person who can only carry so much. Each item has a weight and value, and your goal is to <b>maximize the total value of items</b> while remaining within the <b>weight limit of your knapsack</b>. This is called the <b>knapsack problem</b>.</p>
+                <div class="button">VIEW ALGORITHM</div>
+                <div class="button">VIEW CODE</div>
+            </div>
+        </section>
+    </main>
+</body>
+
+<script>
+    //ČEKÁNÍ NA UDÁLOST
+    //let buttonAlgorithmOne = document.getElementById('read-more-algorithm-one');
+    //buttonAlgorithmOne.addEventListener('mouseover', toggleInfo);
+    
+    //JINÝ ZPŮSOB ZÁPISU REGISTRACE HANDLERU
+    //eventTarget.onclick = eventHandlerFunction;
+
+    //jak to udělat, aby One, Two byly proměnné toggleInfo(x)? Lze využít target?
+    function toggleInfoOne() {
+        let infoAlgorithm = document.getElementById('info-one');
+        let button = document.getElementById("button-one");
+
+        if (infoAlgorithm.style.display === "block") {
+            infoAlgorithm.style.display = "none";
+            button.style.fontWeight = "normal";
+            button.style.color = "black";
+            button.style.backgroundColor = "white";
+            //zmizely vlastnosti hover!!!
+        } else {
+            infoAlgorithm.style.display = "block";
+            button.style.fontWeight = "bold";
+            button.style.color = "white";
+            button.style.backgroundColor = "#008CBA";
+        }
+    }
+
+    function toggleInfoTwo() {
+        let infoAlgorithm = document.getElementById('info-two');
+        let button = document.getElementById("button-two");
+
+        if (infoAlgorithm.style.display === "block") {
+            infoAlgorithm.style.display = "none";
+            button.style.fontWeight = "normal";
+            button.style.color = "black";
+            button.style.backgroundColor = "white";
+        } else {
+            infoAlgorithm.style.display = "block";
+            button.style.fontWeight = "bold";
+            button.style.color = "white";
+            button.style.backgroundColor = "#008CBA";
+        }
+    }
+
+    function toggleInfoThree() {
+        let infoAlgorithm = document.getElementById('info-three');
+        let button = document.getElementById("button-three");
+
+        if (infoAlgorithm.style.display === "block") {
+            infoAlgorithm.style.display = "none";
+            button.style.fontWeight = "normal";
+            button.style.color = "black";
+            button.style.backgroundColor = "white";
+        } else {
+            infoAlgorithm.style.display = "block";
+            button.style.fontWeight = "bold";
+            button.style.color = "white";
+            button.style.backgroundColor = "#008CBA";
+        }
+    }
+</script>
+
+</html>
