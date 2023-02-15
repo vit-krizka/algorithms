@@ -12,6 +12,32 @@ h1 {
     color: #008CBA;
 }
 
+h2 {
+    margin: 0;
+    text-align: center;
+    padding: 20px 0;
+    color: #00a0d6;
+}
+
+h3 {
+    margin: 0;
+    text-align: center;
+    padding: 10px 0;
+    color: #00a0d6;
+}
+
+a,
+a:hover,
+a:focus,
+a:active {
+    text-decoration: none;
+    color: inherit;
+}
+
+.algo section {
+    padding: 20px;
+}
+
 .container {
     display: block;
     margin: 0 auto;
@@ -27,7 +53,7 @@ h1 {
     text-align: center;
     border-radius: 4px;
     color: black;
-    background-color: white; 
+    background-color: white;
     border: 2px solid #008CBA;
     margin: 0 auto 15px auto;
     padding: 5px 0;
@@ -43,18 +69,64 @@ h1 {
     cursor: pointer;
     transition: all 0.5s;
 }
-  
+
+.button-grey {
+    display: inline-block;
+    width: 30%;
+    font-size: 22px;
+    text-align: center;
+    border-radius: 4px;
+    color: black;
+    background-color: white;
+    border: 2px solid #000000;
+    margin: 0 auto 10px auto;
+    padding: 5px 0;
+    transition: all 0.5s;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.button-grey:hover {
+    font-weight: bold;
+    background-color: #666666;
+    color: white;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
 .info {
     display: none;
     width: 65%;
     font-size: 18px;
     text-align: center;
     color: black;
-    background-color: white; 
+    background-color: white;
     border: 2px solid #008CBA;
-    margin: 0 auto 15px auto;
+    margin: 0 auto 0px auto;
     padding: 20px 15px 5px 15px;
     position: relative;
     top: -37px;
     z-index: 1;
+}
+
+.primeNumbersBox {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: left;
+    gap: 10px;
+}
+
+.primeBox {
+    background-color: #008CBA;
+    width: 50px;
+    /* height: 50px; */
+    text-align: center;
+}
+
+.primeNumber {
+    color: white;
+    font-size: larger;
+    font-weight: bold;
+    padding: 3px;
 }

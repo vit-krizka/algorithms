@@ -1,27 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sieve of Eratosthenes</title>
+    <link rel="stylesheet" type="text/css" href="../style.css">
 </head>
+
 <body>
-    
-<h1>Sieve of Eratosthenes</h1>
-<form id="post">
-    <label for="maxNumber">Insert number:</label><br>
-    <input type="number" id="maxNumber" name="maxNumber"><br>
-    <input type="submit" value="Find prime numbers">
-</form>
-<p id="primeNumbers"></p>
+    <main class="container algo">
+        <h1>SIEVE OF ERATOSTHENES</h1>
 
-<script>
-    let form = document.querySelector('#post');
-    let data = new FormData(form);
-    let number = data.get('maxNumber');
+        <section>
+            <form id="post">
+                <label for="maxNumber">Insert number:</label><br>
+                <input type="number" id="maxNumber" name="maxNumber"><br>
+                <input type="submit" value="Find prime numbers">
+            </form>
+        </section>
 
-    document.getElementById(primeNumbers).innerHTML = "2";
-</script>
+        <section>
+            <div id="primeNumbersSection">
+            </div>
+        </section>
+
+        <section>
+            <div>
+                <div class="button-grey">
+                    <a href="/">Back to list of algorithms</a>
+                </div>
+                <div class="button-grey">
+                    <a href="/pages/sieveOfEratosthenesCode.html">View a code</a>
+                </div>
+            </div>
+        </section>
+
+        <script>
+            let form = document.querySelector('#post');
+            let data = new FormData(form);
+            let maxNumber = data.get('maxNumber') || 100;
+
+            let primeNumbersSection = document.getElementById("primeNumbersSection");
+
+            function sieveOfEratosthenes(n) {
+                if (n <= 1) {
+                    return [];
+                }
+
+                const numbers = new Map();
+
+                for (i = 0; i <= n; i++) {
+                    numbers.set(i, true);
+                }
+
+                numbers.set(0, false);
+                numbers.set(1, false);
+
+                const maxN = Math.sqrt(n);
+
+                for (i = 2; i <= maxN; i++) {
+                    if (numbers.get(i) === true) {
+                        for (j = i * 2; j <= n; j = j + i) {
+                            numbers.set(j, false);
+                        }
+                    }
+                }
+
+                primeNumbers = [];
+
+                numbers.forEach(function (value, key) {
+                    if (value === true) {
+                        primeNumbers.push(key);
+                    }
+                });
+
+                return primeNumbers;
+            }
+
+            function printPrimeNumbers() {
+                const primeNumberTitle = document.createElement("h2");
+                primeNumberTitle.innerHTML = `Prime numbers up to ${maxNumber}`;
+
+                const primeNumbersDiv = document.createElement("div");
+                primeNumbersDiv.classList.add("primeNumbersBox");
+                const primeNumbers = sieveOfEratosthenes(50);
+
+                for (const number of primeNumbers) {
+                    primeNumbersDiv.innerHTML += `<div class="primeBox"><p class="primeNumber">${number}<p></div>`;
+                }
+
+                primeNumbersSection.appendChild(primeNumberTitle);
+                primeNumbersSection.appendChild(primeNumbersDiv);
+            }
+
+            printPrimeNumbers();
+        </script>
+    </main>
 </body>
+
 </html>

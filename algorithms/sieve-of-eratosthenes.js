@@ -3,11 +3,11 @@ function sieveOfEratosthenes(n) {
   if (n <= 1) {
     return [];
   }
-  
+
   const numbers = new Map();
 
   for (i = 0; i <= n; i++) {
-      numbers.set(i, true);
+    numbers.set(i, true);
   }
 
   numbers.set(0, false);
@@ -15,26 +15,27 @@ function sieveOfEratosthenes(n) {
 
   const maxN = Math.sqrt(n);
 
-  for(i = 2; i <= maxN; i++) {
-      if (numbers.get(i) === true) {
-          for(j = i * 2; j <= n; j = j + i) {
-              numbers.set(j, false);
-          }
+  for (i = 2; i <= maxN; i++) {
+    if (numbers.get(i) === true) {
+      for (j = i * 2; j <= n; j = j + i) {
+        numbers.set(j, false);
       }
+    }
   }
 
   primeNumbers = [];
 
-  numbers.forEach(function(value, key) {
-      if(value === true) {
-          primeNumbers.push(key);
-      }
+  numbers.forEach(function (value, key) {
+    if (value === true) {
+      primeNumbers.push(key);
+    }
   });
 
   return primeNumbers;
 }
 
 //SOLUTION WITH ARRAYS
+
 function sieveOfEratosthenes2(limit) {
   // Handle edge cases
   if (limit <= 1) {
@@ -46,7 +47,7 @@ function sieveOfEratosthenes2(limit) {
   // Mark 0 and 1 as non-prime
   output[0] = false;
   output[1] = false;
-   
+
   // Iterate up to the square root of the limit
   for (let i = 2; i < Math.pow(limit, 0.5); i++) {
     if (output[i] === true) {
@@ -56,7 +57,7 @@ function sieveOfEratosthenes2(limit) {
       }
     }
   }
-   
+
   // Remove non-prime numbers
   return output.reduce((primes, current, index) => {
     if (current) {
@@ -65,6 +66,8 @@ function sieveOfEratosthenes2(limit) {
     return primes
   }, []);
 }
+
+
 
 //TESTS
 console.log(sieveOfEratosthenes(100));
