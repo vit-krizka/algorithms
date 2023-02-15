@@ -11,39 +11,37 @@
 
 <body>
     <main class="container algo">
-        <h1>SIEVE OF ERATOSTHENES</h1>
+        <h1><a href="/pages/sieveOfEratosthenes.html">SIEVE OF ERATOSTHENES</a></h1>
 
         <section>
-            <form id="post">
-                <label for="maxNumber">Insert number:</label><br>
-                <input type="number" id="maxNumber" name="maxNumber"><br>
-                <input type="submit" value="Find prime numbers">
-            </form>
+            <div class="container">
+                <form id="post">
+                    <label for="maxNumber">Insert number: </label>
+                    <input type="number" id="maxNumber" name="maxNumber" value="100"><br>
+                    <input value="FIND PRIME NUMBERS" class="button-submit" onclick="printPrimeNumbers()">
+                </form>
+            </div>
         </section>
 
-        <section>
-            <div id="primeNumbersSection">
+        <section id="primeNumbersSection">
+            <div>
             </div>
         </section>
 
         <section>
-            <div>
+            <div class="links">
                 <div class="button-grey">
                     <a href="/">Back to list of algorithms</a>
                 </div>
                 <div class="button-grey">
                     <a href="/pages/sieveOfEratosthenesCode.html">View a code</a>
                 </div>
+                <div class="button-grey button-right">
+                </div>
             </div>
         </section>
 
         <script>
-            let form = document.querySelector('#post');
-            let data = new FormData(form);
-            let maxNumber = data.get('maxNumber') || 100;
-
-            let primeNumbersSection = document.getElementById("primeNumbersSection");
-
             function sieveOfEratosthenes(n) {
                 if (n <= 1) {
                     return [];
@@ -80,22 +78,25 @@
             }
 
             function printPrimeNumbers() {
+                let maxNumber = document.querySelector('#maxNumber').value;
+                const primeNumbersSection = document.getElementById("primeNumbersSection");
+
                 const primeNumberTitle = document.createElement("h2");
                 primeNumberTitle.innerHTML = `Prime numbers up to ${maxNumber}`;
 
                 const primeNumbersDiv = document.createElement("div");
                 primeNumbersDiv.classList.add("primeNumbersBox");
-                const primeNumbers = sieveOfEratosthenes(50);
+                const primeNumbers = sieveOfEratosthenes(maxNumber);
 
                 for (const number of primeNumbers) {
                     primeNumbersDiv.innerHTML += `<div class="primeBox"><p class="primeNumber">${number}<p></div>`;
                 }
 
-                primeNumbersSection.appendChild(primeNumberTitle);
-                primeNumbersSection.appendChild(primeNumbersDiv);
+                primeNumbersSection.append(primeNumberTitle);
+                primeNumbersSection.append(primeNumbersDiv);
             }
 
-            printPrimeNumbers();
+            //printPrimeNumbers();
         </script>
     </main>
 </body>

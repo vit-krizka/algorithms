@@ -34,14 +34,25 @@ a:active {
     color: inherit;
 }
 
-.algo section {
-    padding: 20px;
+p,
+label {
+    font-size: 22px;
+}
+
+section {
+    padding: 0px 20px;
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .container {
     display: block;
     margin: 0 auto;
-    padding-bottom: 30px;
+    /* padding-bottom: 30px; */
     width: 80%;
     background: #ffffff;
 }
@@ -70,9 +81,15 @@ a:active {
     transition: all 0.5s;
 }
 
+.links {
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+    padding: 25px;
+}
+
 .button-grey {
-    display: inline-block;
-    width: 30%;
+    width: 25%;
     font-size: 22px;
     text-align: center;
     border-radius: 4px;
@@ -92,6 +109,13 @@ a:active {
     color: white;
     cursor: pointer;
     transition: all 0.5s;
+}
+
+.button-right {
+    visibility: hidden;
+    opacity: 0;
+    cursor: none;
+    transition: none;
 }
 
 .info {
@@ -120,8 +144,11 @@ a:active {
 .primeBox {
     background-color: #008CBA;
     width: 50px;
-    /* height: 50px; */
     text-align: center;
+}
+
+.primeBox:hover {
+    background-color: #006c90;
 }
 
 .primeNumber {
@@ -129,4 +156,30 @@ a:active {
     font-size: larger;
     font-weight: bold;
     padding: 3px;
+}
+
+#post {
+    text-align: center;
+}
+
+.button-submit {
+    font-size: 22px;
+    text-align: center;
+    border-radius: 4px;
+    color: rgb(255, 255, 255);
+    background-color: #008CBA;
+    border: 2px solid #000000;
+    margin: 10px auto;
+    padding: 7px 15px;
+    transition: all 0.5s;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.button-submit:hover {
+    font-weight: bold;
+    background-color: #00a8e0;
+    color: white;
+    cursor: pointer;
+    transition: all 0.5s;
 }
