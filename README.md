@@ -80,7 +80,7 @@ function sieveOfEratosthenes2(limit) {
 }
 ```
 
-### Capturing 
+### Capturing Rainwater
 - the capturing rainwater problem asks you to calculate how much rainwater would be trapped in the empty spaces
 - the naive solution had a quadratic runtime, but it’s possible to solve this problem in O(n) time by using two pointers
 
@@ -133,7 +133,7 @@ function capturingRainwater2(heights) {
 }
 ```
 
-### The Knapsack problem 
+### The Knapsack Problem 
 - imagine that you’re a thief breaking into a house; there are so many valuables to steal - diamonds, gold, jewelry, and more, but remember, you’re just one person who can only carry so much
 - each item has a weight and value, and your goal is to maximize the total value of items while remaining within the weight limit of your knapsack
 
